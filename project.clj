@@ -8,7 +8,8 @@
                  [ring/ring-devel "1.2.1"]
                  [ring/ring-jetty-adapter "1.2.1"]
                  [compojure "1.1.6"]
-                 [hiccup "1.0.4"]]
+                 [hiccup "1.0.4"]
+                 [com/taoensso/carmine "2.4.0"]]
   :dev-dependencies [[lein-run "0.8.8"]]
   :main shortener.core
   :resources-path "resources")
