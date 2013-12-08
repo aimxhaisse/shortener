@@ -4,18 +4,27 @@
         [ring.adapter.jetty]
         [ring.middleware reload stacktrace]))
 
+; layouts
+(defn layout [& content]
+  (html
+   [:head
+    [:meta {:http-equiv "Content-Type"
+            :content "text/html; charset=utf-8"}]
+    [:title "Yet Another URL Shortener | 302.sbrk.org"]
+    [:body content]]))
+
 ; handlers
 (defn handle-home []
   "this handler serves the home page"
-  (str "Hello World"))
+  (layout "Hello World"))
 
 (defn handle-redirect [token]
   "this handler redirects the user to the URL pointed by token"
-  (str "Your token is " token))
+  (layout "Your token is " token))
 
 (defn handle-new-url [new-url]
   "this handler creates a new token for the given URL"
-  (str "Your URL is " new-url))
+  (layout "Your URL is " new-url))
 
 ; routes
 (defroutes custom-routes
