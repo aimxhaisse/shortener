@@ -10,4 +10,5 @@
                  [compojure "1.1.6"]
                  [hiccup "1.0.4"]]
   :dev-dependencies [[lein-run "0.8.8"]]
-  :main shortener.core)
+  :main shortener.core
+  :resources-path "resources")
